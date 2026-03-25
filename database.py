@@ -2,6 +2,26 @@ import aiosqlite
 import logging
 from datetime import datetime
 
+EMOJI_IDS = {
+    "start": "5461151367559141950",  # 📊
+    "users": "4990518214292145691",  # 👥
+    "orders": "4990518214292145691",  # 📦
+    "money": "4990518214292145691",  # 💰
+    "mail": "4990518214292145691",  # 📨
+    "ticket": "4990518214292145691",  # 🎫
+    "settings": "4990518214292145691",  # ⚙️
+    "warning": "4990518214292145691",  # ⚠️
+    "success": "4990518214292145691",  # ✅
+    "error": "4990518214292145691",  # ❌
+    "back": "4990518214292145691",  # ◀️
+    "search": "4990518214292145691",  # 🔍
+    "block": "4990518214292145691",  # 🚫
+    "unblock": "4990518214292145691",  # ✅
+    "admin": "4990518214292145691",  # 👑
+    "rub": "4990518214292145691",  # ₽
+    "star": "4990518214292145691",  # ⭐
+    "diamond": "4990518214292145691",  # 💎
+
 async def init_db(database_path: str):
     async with aiosqlite.connect(database_path) as db:
         db.row_factory = aiosqlite.Row
@@ -92,7 +112,7 @@ async def init_db(database_path: str):
             'premium_price_1': '1499',
             'premium_price_2': '2499',
             'maintenance_mode': '0',
-            'start_text': '<b>🖐 Добро пожаловать</b>\n\n🚀 У нас моментальная доставка 24/7\n📱 Без KYC и верификаций\n💰 Оплата любым способом',
+            'start_text': '<b><tg-emoji emoji-id=\"{EMOJI_IDS["start"]}\">🎉</tg-emoji>  🎉 Приветствую в MstiStars\n📊 Куплено звёзд через нас: 122344 ⭐️\n\nУ нас вы можете:\n⭐️ Приобрести и подарить звёзды по низким ценам!\n🔹 Приобрести Telegram Premium\n💎 Купить TON на аккаунт\n\n📌 Выберите действие ниже',
             'purchase_success_text': 'Спасибо за покупку ✅\nЗвёзды придут в течении 5 минут ⭐️',
             'news_channel_id': '',
             'news_channel_link': '',
